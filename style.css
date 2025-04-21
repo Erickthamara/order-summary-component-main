@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: inherit;
+}
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+:root {
+  /* Layout */
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+
+  /* Colors */
+  --color-primary-white: hsl(225, 40%, 98%);
+
+  --color-primary-pale-blue: hsl(225, 100%, 94%);
+  --color-primary-bright-blue: hsl(245, 75%, 52%);
+
+  --color-neutral-very-pale-blue: hsl(225, 100%, 98%);
+  --color-neutral-desaturated-blue: hsl(224, 23%, 55%);
+  --color-neutral-dark-blue: hsl(223, 47%, 23%);
+
+  /* Typography */
+  --font-size-body: 16px;
+  --font-family-base: "Red Hat Display", sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 900;
+
+  /* Box Shadow */
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-size: var(--font-size-body);
+  font-family: var(--font-family-base);
+  color: var(--color-neutral-dark-blue);
+  background-image: url("/images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 1rem; /* top/bottom, left/right */
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(
+    100vh - 4rem
+  ); /* account for 2rem top + 2rem bottom padding */
+}
+
+.container {
+  overflow: hidden;
+  background: var(--color-neutral-very-pale-blue);
+  /* border: 2px;
+  border-style: solid;
+  border-color: black; */
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 2rem;
+}
+.text-container {
+  padding: 2rem;
+  /* text-align: center; */
+  background: var(--color-primary-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.title {
+  font-size: 2rem;
+  font-weight: var(--font-weight-extra-bold);
+  color: var(--color-neutral-dark-blue);
+}
+.description {
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-desaturated-blue);
+  text-align: center;
+}
+
+.plan-container {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  box-shadow: var(--shadow-soft);
+  border-radius: 9%;
+  margin-bottom: 2rem;
+}
+
+.Change-button {
+  /* background: var(--color-primary-bright-blue); */
+  color: var(--color-primary-bright-blue);
+  background: transparent;
+  /* padding: 1rem 2rem; */
+  /* border-radius: 5px; */
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  border: none;
+  cursor: pointer;
+  /* transition: all 0.3s ease-in-out; */
+  text-decoration: underline;
+}
+.Change-button:hover {
+  color: var(--color-neutral-desaturated-blue);
+  /* background: var(--color-primary-bright-blue); */
+  /* transform: scale(1.05); */
+}
+
+.Payment-button {
+  background: var(--color-primary-bright-blue);
+  color: var(--color-primary-white);
+  padding: 1rem 5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cancel-button {
+  background: transparent;
+  color: var(--color-neutral-desaturated-blue);
+  padding: 1rem 5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: url("/images/pattern-background-mobile.svg");
+    padding: 3rem 2rem;
+  }
+}
